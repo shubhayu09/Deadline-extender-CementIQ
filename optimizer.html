@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔧 Cement Plant Optimizer</title>
+    <link rel="stylesheet" href="optimizer.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🏭 Cement Plant AI</h1>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">📊 Dashboard</a></li>
+                <li><a href="simulator.html" class="nav-link">🔮 Predictor</a></li>
+                <li><a href="optimizer.html" class="nav-link active">🔧 Optimizer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section class="optimizer-section">
+            <h2>🔧 Optimal Cement Plant Configuration</h2>
+            <p class="subtitle">Best parameter combination for maximum efficiency</p>
+
+            <!-- Get Optimal Solution Button -->
+            <button id="getOptimalBtn" class="btn-primary" onclick="getOptimalSolution()">
+                ⚡ Get Optimal Solution
+            </button>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="loading-spinner hidden">
+                <div class="spinner"></div>
+                <p>🔄 Loading optimal solution...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message hidden"></div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-section hidden">
+                <div class="results-header">
+                    <h3>✅ Optimal Solution Found</h3>
+                    <div class="efficiency-display">
+                        <span class="label">Maximum Achievable Efficiency:</span>
+                        <span id="resultEfficiency" class="value">95.5%</span>
+                    </div>
+                </div>
+
+                <!-- Optimized Features Table -->
+                <div class="features-table-wrapper">
+                    <table class="features-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Feature</th>
+                                <th>Optimal Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="featuresTableBody">
+                            <!-- Populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn-secondary" onclick="copyToSimulator()">
+                        📋 Use in Predictor
+                    </button>
+                    <button class="btn-secondary" onclick="downloadResults()">
+                        📥 Download Results
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Cement Plant AI System</p>
+    </footer>
+
+    <script src="optimizer.js"></script>
+</body>
+
+</html>

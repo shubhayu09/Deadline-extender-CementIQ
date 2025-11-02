@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cement.AI - Simulator</title>
+
+  <!-- Firebase -->
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+  <!-- Styles -->
+
+  <link href="one.css" rel="stylesheet">
+
+  <script>
+
+    // TODO: replace with your Firebase config
+
+    const firebaseConfig = {
+
+      apiKey: "YOUR_API_KEY",
+
+      authDomain: "YOUR_AUTH_DOMAIN",
+
+      databaseURL: "YOUR_DATABASE_URL",
+
+      projectId: "YOUR_PROJECT_ID",
+
+      storageBucket: "YOUR_STORAGE_BUCKET",
+
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+
+      appId: "YOUR_APP_ID"
+
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+  </script>
+
+  <script src="simulator.js" defer></script>
+
+</head>
+
+<body>
+
+  <nav class="navbar">
+
+    <div class="nav-left">
+
+      <div class="logo"><span class="cement">Cement</span><span class="iq">IQ</span></div>
+
+      <div class="nav-links">
+
+        <a href="index.html">Dashboard</a>
+
+        <a href="simulator.html" class="active">Simulator</a>
+
+        <a href="analytics-simplified.html">Optimizer</a>
+
+      </div>
+
+    </div>
+
+    <div class="nav-right">
+
+      <div class="search-box">
+
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+
+          <circle cx="11" cy="11" r="8"></circle>
+
+          <path d="m21 21-4.35-4.35"></path>
+
+        </svg>
+
+        <input type="text" placeholder="Search..." />
+
+      </div>
+
+      <button class="icon-button" aria-label="Notifications">
+
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+
+        </svg>
+
+        <span class="notification-badge">3</span>
+
+      </button>
+
+      <div class="user-profile">
+
+        <div class="user-avatar">IK</div>
+
+        <span class="user-name">Ishant Khurana</span>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+
+  <div class="main-container">
+
+    <div class="dashboard-content">
+
+      <div class="dashboard-header">
+
+        <div class="header-left">
+
+          <div class="breadcrumb">
+
+            <span>Home</span>
+
+            <span class="separator">/</span>
+
+            <span class="current">Simulator</span>
+
+          </div>
+
+          <h1>Process Simulator</h1>
+
+        </div>
+
+        <div class="header-right">
+
+          <div class="time-display" id="simTime">
+
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+              <circle cx="12" cy="12" r="10"></circle>
+
+              <polyline points="12 6 12 12 16 14"></polyline>
+
+            </svg>
+
+            <span>--:--:--</span>
+
+          </div>
+
+          <button class="btn btn--outline btn--sm">
+
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+              <path d="M3 3h18v18H3z"></path>
+
+              <path d="M9 9h6v6H9z"></path>
+
+            </svg>
+
+            Reset
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="simulator-frame" id="simulatorFrame">
+
+        <div class="image-display">
+
+          <img id="stepImage" src="images/default.png" alt="Step Image" />
+
+        </div>
+
+      </div>
+
+
+
+      <div class="sim-controls" id="simControls">
+
+        <!-- JS will inject 15 controls here -->
+
+      </div>
+
+    </div>
+
+
+
+    <div class="sidebar">
+
+      <div class="alerts-panel efficiency-panel">
+
+        <h3>Alerts</h3>
+
+        <div id="outOfBoundsMsg" class="sidebar-message hidden">
+
+          You are out of bound, please look into the process.
+
+        </div>
+
+      </div>
+
+
+
+      <div class="alerts-panel efficiency-panel">
+
+        <h3>Efficiency</h3>
+
+        <div id="efficiencyMsg" class="sidebar-message hidden"></div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Submit button fixed bottom-right -->
+
+    <div class="submit-fixed">
+
+      <button id="calculateBtn" class="calculate-button">Submit</button>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

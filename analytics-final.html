@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CementIQ - Analytics & Optimization</title>
+    <link rel="stylesheet" href="one.css">
+    <link rel="stylesheet" href="analytics-styles-premium.css">
+    <link rel="stylesheet" href="analytics-insights-colors.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="logo">Cement<span class="iq">IQ</span></span>
+            <div class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="simulator.html">Simulator</a>
+                <a href="analytics-final.html" class="active">Optimizer</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="user-profile">
+                <div class="user-avatar">IK</div>
+                <div class="user-name">Ishant Khurana</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <div class="dashboard-content">
+            <!-- Page Header with Animation -->
+            <div class="analytics-hero">
+                <div class="hero-content">
+                    <div class="hero-icon">📊</div>
+                    <h1 class="hero-title">Process Optimization Engine</h1>
+                    <p class="hero-subtitle">AI-powered analysis to optimize your cement production process</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">Parameters Analyzed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">30%</span>
+                            <span class="stat-label">Avg. Efficiency Gain</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Real-time</span>
+                            <span class="stat-label">Analysis Results</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="analytics-main">
+                <!-- Left Panel: Upload Area -->
+                <div class="upload-panel">
+                    <!-- Upload Card with Enhanced UX -->
+                    <div class="premium-card upload-card">
+                        <div class="card-header">
+                            <div class="header-icon">📁</div>
+                            <div class="header-text">
+                                <h2>Upload Process Data</h2>
+                                <p>Drag & drop or click to select your data file</p>
+                            </div>
+                        </div>
+
+                        <!-- Enhanced Upload Area -->
+                        <div class="upload-area" id="uploadArea">
+                            <svg class="upload-animation" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M50 20 L50 80 M30 60 L50 80 L70 60" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="10" y="85" width="80" height="5" rx="2" fill="currentColor"/>
+                            </svg>
+                            <div class="upload-text">
+                                <p class="upload-main">Drop your file here</p>
+                                <p class="upload-sub">CSV • JSON • XLSX up to 10MB</p>
+                            </div>
+                            <input type="file" id="fileInput" accept=".csv,.json,.xlsx" style="display: none;">
+                        </div>
+
+                        <!-- File Info with Progress -->
+                        <div class="file-info" id="fileInfo" style="display: none;">
+                            <div class="file-header">
+                                <div class="file-icon">✓</div>
+                                <div class="file-details">
+                                    <div class="file-name" id="fileName"></div>
+                                    <div class="file-meta" id="fileStatus"></div>
+                                </div>
+                            </div>
+                            <div class="file-progress" id="fileProgress">
+                                <div class="progress-bar"></div>
+                            </div>
+                        </div>
+
+                        <!-- Supported Formats -->
+                        <div class="supported-formats">
+                            <p class="formats-label">📋 Supported Formats:</p>
+                            <div class="format-badges">
+                                <span class="format-badge">CSV</span>
+                                <span class="format-badge">JSON</span>
+                                <span class="format-badge">XLSX</span>
+                            </div>
+                        </div>
+
+                        <!-- Analyze Button -->
+                        <button class="btn btn--primary btn--lg analyze-btn" id="analyzeBtn" style="display: none;">
+                            <span class="btn-icon">⚡</span>
+                            <span class="btn-text">Analyze & Optimize</span>
+                            <span class="btn-loader"></span>
+                        </button>
+
+                        <!-- Info Box -->
+                        <div class="info-box">
+                            <span class="info-icon">ℹ️</span>
+                            <p>Your data is processed locally. No data is sent to external servers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel: Results & Info -->
+                <div class="results-panel">
+                    <!-- Quick Tips Card -->
+                    <div class="premium-card tips-card" id="tipsCard">
+                        <div class="card-header compact">
+                            <h3>💡 Quick Tips</h3>
+                        </div>
+                        <div class="tips-list">
+                            <div class="tip-item">
+                                <span class="tip-number">1</span>
+                                <p>Prepare your process data in CSV or JSON format</p>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-number">2</span>
+                                <p>Include recent operational parameters for best results</p>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-number">3</span>
+                                <p>Review insights and export recommendations for your team</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Overview Card -->
+                    <div class="premium-card stats-card" id="statsCard">
+                        <div class="card-header compact">
+                            <h3>📈 Optimization Overview</h3>
+                        </div>
+                        <div class="stats-overview">
+                            <div class="stat-bar">
+                                <div class="stat-bar-label">
+                                    <span>Efficiency Gain</span>
+                                    <span class="stat-value">+25%</span>
+                                </div>
+                                <div class="stat-bar-fill" style="width: 75%;"></div>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-bar-label">
+                                    <span>Energy Savings</span>
+                                    <span class="stat-value">+18%</span>
+                                </div>
+                                <div class="stat-bar-fill" style="width: 60%;"></div>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-bar-label">
+                                    <span>Quality Improvement</span>
+                                    <span class="stat-value">+22%</span>
+                                </div>
+                                <div class="stat-bar-fill" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Uploads -->
+                    <div class="premium-card recent-card" id="recentCard">
+                        <div class="card-header compact">
+                            <h3>📚 Recent Analysis</h3>
+                        </div>
+                        <div class="recent-list">
+                            <p class="recent-empty">No analysis history yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section (Hidden Initially) -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <!-- Results Header with Filters -->
+                <div class="results-header-section">
+                    <div class="results-title-group">
+                        <h2>Optimization Insights</h2>
+                        <p>Analysis complete - Color-coded by priority: <span style="color: #dc3545; font-weight: 700;">🔴 High</span> • <span style="color: #ffc107; font-weight: 700;">🟡 Medium</span> • <span style="color: #28a745; font-weight: 700;">🟢 Low</span></p>
+                    </div>
+                    
+                    <div class="results-controls">
+                        <div class="filter-group">
+                            <button class="filter-btn active" data-filter="all">All (15)</button>
+                            <button class="filter-btn" data-filter="high">High Priority</button>
+                            <button class="filter-btn" data-filter="medium">Medium Priority</button>
+                            <button class="filter-btn" data-filter="low">Low Priority</button>
+                        </div>
+                        <div class="sort-group">
+                            <select class="sort-select" id="sortSelect">
+                                <option value="priority">Sort by Priority</option>
+                                <option value="impact">Sort by Impact</option>
+                                <option value="category">Sort by Category</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations Grid with Enhanced Cards -->
+                <div class="recommendations-grid" id="recommendationsList">
+                    <!-- Insight cards will be inserted here -->
+                </div>
+
+                <!-- Summary Stats -->
+                <div class="summary-section">
+                    <div class="summary-card high">
+                        <div class="summary-icon">🔴</div>
+                        <div class="summary-content">
+                            <p class="summary-label">High Priority</p>
+                            <p class="summary-number" id="highCount">0</p>
+                        </div>
+                    </div>
+                    <div class="summary-card medium">
+                        <div class="summary-icon">🟡</div>
+                        <div class="summary-content">
+                            <p class="summary-label">Medium Priority</p>
+                            <p class="summary-number" id="mediumCount">0</p>
+                        </div>
+                    </div>
+                    <div class="summary-card low">
+                        <div class="summary-icon">🟢</div>
+                        <div class="summary-content">
+                            <p class="summary-label">Low Priority</p>
+                            <p class="summary-number" id="lowCount">0</p>
+                        </div>
+                    </div>
+                    <div class="summary-card impact">
+                        <div class="summary-icon">✨</div>
+                        <div class="summary-content">
+                            <p class="summary-label">Total Impact</p>
+                            <p class="summary-number">+287%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="results-actions">
+                    <button class="btn btn--secondary" id="resetBtn">
+                        <span class="btn-icon">🔄</span>
+                        Upload Another File
+                    </button>
+                    <button class="btn btn--primary" id="exportResultsBtn">
+                        <span class="btn-icon">📥</span>
+                        Export Insights
+                    </button>
+                    <button class="btn btn--primary btn--accent" id="printBtn">
+                        <span class="btn-icon">🖨️</span>
+                        Print Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- Empty State with Illustration -->
+            <div class="empty-state" id="emptyState">
+                <div class="empty-illustration">
+                    <div class="illustration-box">
+                        <span class="illustration-icon">📊</span>
+                    </div>
+                </div>
+                <div class="empty-content">
+                    <h3>Ready to Get Optimization Insights?</h3>
+                    <p>Upload your process data file to get detailed insights on best fit values for each parameter</p>
+                    <div class="empty-cta">
+                        <button class="btn btn--primary" onclick="document.getElementById('uploadArea').click()">
+                            Choose File to Upload
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="analytics-insights.js"></script>
+</body>
+</html>
